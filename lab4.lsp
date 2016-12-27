@@ -1,0 +1,5 @@
+(defun func1(&rest args) 
+    (mapcar (lambda (x) (if (eval (car x)) 
+                            (eval (car (cdr x))) NIL)) args)
+)
+(func1 '((> 1 2) (print 1)) '((< 1 2) (print 2)))
